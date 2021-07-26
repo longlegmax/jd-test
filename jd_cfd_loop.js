@@ -50,7 +50,7 @@ var fs = require('fs');
 var notify = require('./sendNotify');
 dotenv.config();
 var appId = 10028, fingerprint, token, enCryptMethodJD;
-var cookie = '', res = '';
+var cookie = '', res = '', balloon = false;
 process.env.CFD_LOOP_DELAY ? console.log('设置延迟:', parseInt(process.env.CFD_LOOP_DELAY)) : console.log('设置延迟:10000~25000随机');
 var UserName, index;
 !(function () { return __awaiter(void 0, void 0, void 0, function () {
@@ -90,11 +90,11 @@ var UserName, index;
                 });
                 _c.label = 3;
             case 3:
-                if (!1) return [3 /*break*/, 20];
+                if (!1) return [3 /*break*/, 21];
                 i = 0;
                 _c.label = 4;
             case 4:
-                if (!(i < cookiesArr.length)) return [3 /*break*/, 18];
+                if (!(i < cookiesArr.length)) return [3 /*break*/, 19];
                 cookie = cookiesArr[i];
                 UserName = decodeURIComponent(cookie.match(/pt_pin=([^;]*)/)[1]);
                 index = i + 1;
@@ -103,66 +103,71 @@ var UserName, index;
                 _a = _c.sent(), isLogin = _a.isLogin, nickName = _a.nickName;
                 if (!isLogin) {
                     notify.sendNotify(__filename.split('/').pop(), "cookie\u5DF2\u5931\u6548\n\u4EAC\u4E1C\u8D26\u53F7" + index + "\uFF1A" + (nickName || UserName));
-                    return [3 /*break*/, 17];
+                    return [3 /*break*/, 18];
                 }
                 console.log("\n\u5F00\u59CB\u3010\u4EAC\u4E1C\u8D26\u53F7" + index + "\u3011" + (nickName || UserName) + "\n");
                 _c.label = 6;
             case 6:
-                _c.trys.push([6, 16, , 17]);
+                _c.trys.push([6, 17, , 18]);
+                if (!!balloon) return [3 /*break*/, 8];
                 return [4 /*yield*/, speedUp('_cfd_t,bizCode,dwEnv,ptag,source,strBuildIndex,strZone')];
             case 7:
                 res = _c.sent();
                 if (res.iRet !== 0) {
                     console.log('手动建造4个房子');
-                    return [3 /*break*/, 17];
+                    return [3 /*break*/, 18];
                 }
-                console.log('今日热气球:', res.dwTodaySpeedPeople, '/', 20);
-                return [4 /*yield*/, speedUp('_cfd_t,bizCode,dwEnv,ptag,source,strZone')];
-            case 8:
-                shell = _c.sent();
-                if (!shell.Data.hasOwnProperty('NormShell')) return [3 /*break*/, 15];
-                _i = 0, _b = shell.Data.NormShell;
-                _c.label = 9;
+                console.log('今日热气球:', res.dwTodaySpeedPeople);
+                if (res.dwTodaySpeedPeople === 500) {
+                    balloon = true;
+                }
+                _c.label = 8;
+            case 8: return [4 /*yield*/, speedUp('_cfd_t,bizCode,dwEnv,ptag,source,strZone')];
             case 9:
-                if (!(_i < _b.length)) return [3 /*break*/, 15];
-                s = _b[_i];
-                j = 0;
+                shell = _c.sent();
+                if (!shell.Data.hasOwnProperty('NormShell')) return [3 /*break*/, 16];
+                _i = 0, _b = shell.Data.NormShell;
                 _c.label = 10;
             case 10:
-                if (!(j < s.dwNum)) return [3 /*break*/, 14];
-                return [4 /*yield*/, speedUp('_cfd_t,bizCode,dwEnv,dwType,ptag,source,strZone', s.dwType)];
+                if (!(_i < _b.length)) return [3 /*break*/, 16];
+                s = _b[_i];
+                j = 0;
+                _c.label = 11;
             case 11:
+                if (!(j < s.dwNum)) return [3 /*break*/, 15];
+                return [4 /*yield*/, speedUp('_cfd_t,bizCode,dwEnv,dwType,ptag,source,strZone', s.dwType)];
+            case 12:
                 res = _c.sent();
                 if (res.iRet !== 0) {
                     console.log(res);
-                    return [3 /*break*/, 14];
+                    return [3 /*break*/, 15];
                 }
                 console.log('捡贝壳:', res.Data.strFirstDesc);
                 return [4 /*yield*/, TS_USER_AGENTS_1.wait(500)];
-            case 12:
-                _c.sent();
-                _c.label = 13;
             case 13:
-                j++;
-                return [3 /*break*/, 10];
+                _c.sent();
+                _c.label = 14;
             case 14:
+                j++;
+                return [3 /*break*/, 11];
+            case 15:
                 _i++;
-                return [3 /*break*/, 9];
-            case 15: return [3 /*break*/, 17];
-            case 16:
+                return [3 /*break*/, 10];
+            case 16: return [3 /*break*/, 18];
+            case 17:
                 e_1 = _c.sent();
                 console.log(e_1);
-                return [3 /*break*/, 17];
-            case 17:
+                return [3 /*break*/, 18];
+            case 18:
                 i++;
                 return [3 /*break*/, 4];
-            case 18:
-                t = process.env.CFD_LOOP_DELAY ? parseInt(process.env.CFD_LOOP_DELAY) : TS_USER_AGENTS_1.getRandomNumberByRange(1000 * 10, 1000 * 30);
-                return [4 /*yield*/, TS_USER_AGENTS_1.wait(t)];
             case 19:
+                t = process.env.CFD_LOOP_DELAY ? parseInt(process.env.CFD_LOOP_DELAY) : TS_USER_AGENTS_1.getRandomNumberByRange(1000 * 30, 1000 * 60);
+                return [4 /*yield*/, TS_USER_AGENTS_1.wait(t)];
+            case 20:
                 _c.sent();
                 return [3 /*break*/, 3];
-            case 20: return [2 /*return*/];
+            case 21: return [2 /*return*/];
         }
     });
 }); })();

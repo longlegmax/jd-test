@@ -5,6 +5,8 @@
 
 0 0 * * * node /scripts/jd_angryBeancdle.js >> /scripts/logs/jd_angryBeancdle.log 2>&1
 ##############短期活动##############
+#全民摸冰
+6 9,12 * * * node /scripts/jd_mbwenmoux.js  >> /scripts/logs/jd_mbwenmoux.log 2>&1
 #财富岛提现
 0 12,0 * * * node /scripts/jd_cfd_cashOut.js  >> /scripts/logs/jd_cfd_cashOut.log 2>&1
 #7月粉丝互动
@@ -24,7 +26,7 @@
 #京东签到图形验证
 14 10 * * * node /scripts/jd_sign_graphicssmiek2221.js >> /scripts/logs/jd_sign_graphicssmiek2221.log 2>&1
 #点点券
-20 0,20 * * * node /scripts/jd_necklacesmiek2221.js >> /scripts/logs/jd_necklacesmiek2221.log 2>&1
+20 0,20 * * * node /scripts/jd_necklace_new.js >> /scripts/logs/jd_necklace_new.log 2>&1
 #京东宠汪汪
 15 0-23/2 * * * node /scripts/jd_joysmiek2221.js >> /scripts/logs/jd_joysmiek2221.log 2>&1
 #宠汪汪偷好友积分与狗粮
