@@ -3,7 +3,6 @@
 #收集助力码
 30 * * * * sh +x /scripts/docker/auto_help.sh collect >> /scripts/logs/auto_help_collect.log 2>&1
 
-0 0 * * * node /scripts/jd_angryBeancdle.js >> /scripts/logs/jd_angryBeancdle.log 2>&1
 ##############短期活动##############
 #全民摸冰
 6 9,12 * * * node /scripts/jd_mbwenmoux.js  >> /scripts/logs/jd_mbwenmoux.log 2>&1
@@ -150,7 +149,8 @@
 0 12 * * * node /scripts/jd_api_test.js >> /scripts/logs/jd_api_test.log 2>&1
 #京喜牧场
 20 0-23/3 * * *  node /scripts/jd_jxmc.js >> /scripts/logs/jd_jxmc.log 2>&1
-
+#京喜签到
+10 9 * * *  node /scripts/jx_sign.js >> /scripts/logs/jx_sign.log 2>&1
 
 #crazyJoy任务
 #10 9 * * * node /scripts/jd_crazy_joy.js >> /scripts/logs/jd_crazy_joy.log 2>&1
