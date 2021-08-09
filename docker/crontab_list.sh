@@ -7,7 +7,7 @@
 #全民摸冰
 6 9,12 * * * node /scripts/jd_mbwenmoux.js  >> /scripts/logs/jd_mbwenmoux.log 2>&1
 #财富岛提现
-0 12,0 * * * node /scripts/jd_cfd_cashOut.js  >> /scripts/logs/jd_cfd_cashOut.log 2>&1
+0 12,0 * * * node /scripts/jd_cfd_withdraw.js  >> /scripts/logs/jd_cfd_withdraw.log 2>&1
 #7月粉丝互动
 1 8 * * * node /scripts/jd_wxFanswenmoux.js >> /scripts/logs/jd_wxFanswenmoux.log 2>&1
 #星系牧场
@@ -106,7 +106,7 @@
 #幸运大转盘
 4 10 * * * node /scripts/jd_market_lottery.js >> /scripts/logs/jd_market_lottery.log 2>&1
 #5G超级盲盒
-0 0,1-23/3 * * * node /scripts/jd_mohe.js >> /scripts/logs/jd_mohe.log 2>&1
+#0 0,1-23/3 * * * node /scripts/jd_mohe.js >> /scripts/logs/jd_mohe.log 2>&1
 #京东摇钱树
 3 0-23/2 * * * node /scripts/jd_moneyTree.js >> /scripts/logs/jd_moneyTree.log 2>&1
 #京东秒秒币
