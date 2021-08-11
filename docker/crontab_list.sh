@@ -3,6 +3,9 @@
 #收集助力码
 30 * * * * sh +x /scripts/docker/auto_help.sh collect >> /scripts/logs/auto_help_collect.log 2>&1
 
+#手机狂欢城
+0 0-18/6 * * * node /scripts/jd_carnivalcity.js  >> /scripts/logs/jd_carnivalcity.log 2>&1
+
 ##############短期活动##############
 #全民摸冰
 6 9,12 * * * node /scripts/jd_mbwenmoux.js  >> /scripts/logs/jd_mbwenmoux.log 2>&1
