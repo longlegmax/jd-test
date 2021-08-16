@@ -30,9 +30,9 @@
 #点点券
 20 0,20 * * * node /scripts/jd_necklace_new.js >> /scripts/logs/jd_necklace_new.log 2>&1
 #京东宠汪汪
-15 0-23/2 * * * node /scripts/jd_joysmiek2221.js >> /scripts/logs/jd_joysmiek2221.log 2>&1
+#15 0-23/2 * * * node /scripts/jd_joysmiek2221.js >> /scripts/logs/jd_joysmiek2221.log 2>&1
 #宠汪汪偷好友积分与狗粮
-10 0-21/3 * * * node /scripts/jd_joy_stealsmiek2221.js >> /scripts/logs/jd_joy_stealsmiek2221.log 2>&1
+#10 0-21/3 * * * node /scripts/jd_joy_stealsmiek2221.js >> /scripts/logs/jd_joy_stealsmiek2221.log 2>&1
 #送豆得豆
 45 4 * * * node /scripts/jd_sendBeanscdle.js >> /scripts/logs/jd_sendBeanscdle.log 2>&1
 #早起赢现金
