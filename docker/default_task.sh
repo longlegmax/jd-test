@@ -13,6 +13,7 @@ function initPythonEnv() {
   cd /scripts/docker/bot
 #  pip3 install --upgrade pip
   pip3 install pip==21.2.3
+  pip3 install tzlocal==2.1
   pip3 install -r requirements.txt
   python3 setup.py install
 }
