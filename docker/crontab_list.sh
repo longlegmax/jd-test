@@ -6,6 +6,9 @@
 #手机狂欢城
 0 0-18/6 * * * node /scripts/jd_carnivalcity.js  >> /scripts/logs/jd_carnivalcity.log 2>&1
 
+#京东月资产变动通知
+10 7 1-31/7 * * node /scripts/jd_all_bean_changecdle.js >> /scripts/logs/jd_all_bean_changecdle.log 2>&1
+
 ##############短期活动##############
 #全民摸冰
 6 9,12 * * * node /scripts/jd_mbwenmoux.js  >> /scripts/logs/jd_mbwenmoux.log 2>&1
