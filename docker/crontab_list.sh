@@ -3,15 +3,10 @@
 #收集助力码
 30 * * * * sh +x /scripts/docker/auto_help.sh collect >> /scripts/logs/auto_help_collect.log 2>&1
 
-#手机狂欢城
-0 0-18/6 * * * node /scripts/jd_carnivalcity.js  >> /scripts/logs/jd_carnivalcity.log 2>&1
-
 #京东月资产变动通知
 10 7 1-31/7 * * node /scripts/jd_all_bean_changecdle.js >> /scripts/logs/jd_all_bean_changecdle.log 2>&1
 
 ##############短期活动##############
-#全民摸冰
-6 9,12 * * * node /scripts/jd_mbwenmoux.js  >> /scripts/logs/jd_mbwenmoux.log 2>&1
 #财富岛提现
 0 12,0 * * * node /scripts/jd_cfd_withdraw.js  >> /scripts/logs/jd_cfd_withdraw.log 2>&1
 #7月粉丝互动
@@ -166,3 +161,5 @@
 #10 9 * * * node /scripts/jd_crazy_joy.js >> /scripts/logs/jd_crazy_joy.log 2>&1
 #监控crazyJoy分红
 #10 12 * * * node /scripts/jd_crazy_joy_bonus.js >> /scripts/logs/jd_crazy_joy_bonus.log 2>&1
+#手机狂欢城
+#0 0-18/6 * * * node /scripts/jd_carnivalcity.js  >> /scripts/logs/jd_carnivalcity.log 2>&1

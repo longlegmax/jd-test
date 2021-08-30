@@ -190,7 +190,10 @@ const DATA = {
     "product": "embed",
     "lang": "zh_CN",
 };
-const SERVER = 'iv.jd.com';
+let SERVER = 'iv.jd.com';
+if (process.env.JDJR_SERVER) {
+    SERVER = process.env.JDJR_SERVER
+}
 class JDJRValidator {
     constructor() {
         this.data = {};
@@ -223,7 +226,7 @@ class JDJRValidator {
             // console.log('JDJRValidator: %fs', (Date.now() - this.t) / 1000);
             return result;
         } else {
-            if (this.n > 20) {
+            if (this.n > 60) {
                 return;
             }
             this.n++;
