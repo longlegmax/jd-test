@@ -151,6 +151,10 @@
 #领京豆
 0 9,12 * * * node /scripts/jd_bean_box.js >> /scripts/logs/jd_bean_box.log 2>&1
 
+#test js#
+23 8,9 * * * node /scripts/jd_productZ4Brand.js >> /scripts/logs/jd_productZ4Brand.js 2>&1
+2 12 28-31,1-12 8,9 * node /scripts/jd_iqoo_run.js >> /scripts/logs/jd_iqoo_run.js 2>&1
+
 #crazyJoy任务
 #10 9 * * * node /scripts/jd_crazy_joy.js >> /scripts/logs/jd_crazy_joy.log 2>&1
 #监控crazyJoy分红
