@@ -9,42 +9,8 @@
 ##############短期活动##############
 #财富岛提现
 0 12,0 * * * node /scripts/jd_cfd_withdraw.js  >> /scripts/logs/jd_cfd_withdraw.log 2>&1
-#7月粉丝互动
-1 8 * * * node /scripts/jd_wxFanswenmoux.js >> /scripts/logs/jd_wxFanswenmoux.log 2>&1
-#星系牧场
-1 0-23/2 * * * node /scripts/jd_qqxingwenmoux.js >> /scripts/logs/jd_qqxingwenmoux.log 2>&1
-#发财大赢家
-1 0 * * * node /scripts/jd_fcdyjwenmoux.js >> /scripts/logs/jd_fcdyjwenmoux.log 2>&1
-#东东乐园
-30 7 * * * node /scripts/jd_ddnc_farmparkwenmoux.js >> /scripts/logs/jd_ddnc_farmparkwenmoux.log 2>&1
-#天降红包
-30 7 * * * node /scripts/jd_SplitRedPacketwenmoux.js >> /scripts/logs/jd_SplitRedPacketwenmoux.log 2>&1
-#翻翻乐
-#1 6-21/1 * * * node /scripts/jd_618redpacketwenmoux.js  >> /scripts/logs/jd_618redpacketwenmoux.log 2>&1
-#口袋书店
-1 8,12,18 * * * node /scripts/jd_bookshopWenmoux.js >> /scripts/logs/jd_bookshopWenmoux.log 2>&1
 #点点券
 20 0,20 * * * node /scripts/jd_necklace_new.js >> /scripts/logs/jd_necklace_new.log 2>&1
-#京东宠汪汪
-#15 0-23/2 * * * node /scripts/jd_joysmiek2221.js >> /scripts/logs/jd_joysmiek2221.log 2>&1
-#宠汪汪偷好友积分与狗粮
-#10 0-21/3 * * * node /scripts/jd_joy_stealsmiek2221.js >> /scripts/logs/jd_joy_stealsmiek2221.log 2>&1
-#送豆得豆
-45 4 * * * node /scripts/jd_sendBeanscdle.js >> /scripts/logs/jd_sendBeanscdle.log 2>&1
-#早起赢现金
-30 7 * * * node /scripts/jd_morningSccdle.js >> /scripts/logs/jd_morningSccdle.log 2>&1
-#汪汪乐园每日助力
-30 23 * * * node /scripts/jd_joy_park_helpcdle.js >> /scripts/logs/jd_joy_park_helpcdle.log 2>&1
-#早起福利
-30 6 * * * node /scripts/jd_goodMorningcdle.js >> /scripts/logs/jd_goodMorningcdle.log 2>&1
-#愤怒的现金
-0 0 * * * node /scripts/jd_angryCashcdle.js >> /scripts/logs/jd_angryCashcdle.log 2>&1
-#愤怒的锦鲤
-0 0 * * * node /scripts/jd_angryKoicdle.js >> /scripts/logs/jd_angryKoicdle.log 2>&1
-#签到领现金兑换
-#0 0 * * * node /scripts/jd_cash_exchangecdle.js >> /scripts/logs/jd_cash_exchangecdle.log 2>&1
-#发财大赢家助力
-0 0 * * * node /scripts/jd_dyj_helpcdle.js >> /scripts/logs/jd_dyj_helpcdle.log 2>&1
 #预存validate
 59 7,15,23 * * * node /scripts/jd_validate_Worker.js >> /scripts/logs/jd_validate_Worker.log 2>&1
 #宠汪汪兑换京豆
@@ -76,6 +42,8 @@
 #20 9 * * 6 node /scripts/jd_delCoupon.js >> /scripts/logs/jd_delCoupon.log 2>&1
 #京喜工厂
 10 * * * * node /scripts/jd_dreamFactory.js >> /scripts/logs/jd_dreamFactory.log 2>&1
+#京喜工厂助力
+10 * * * * node /scripts/jd_dreamFactory_help.js >> /scripts/logs/jd_dreamFactory_help.log 2>&1
 #京东家庭号
 1 12,23 * * * node /scripts/jd_family.js >> /scripts/logs/jd_family.log 2>&1
 #东东农场
@@ -156,6 +124,8 @@
 35 1,23 * * * node /scripts/jd_nzmh.js >> /scripts/logs/jd_nzmh.log 2>&1
 12 9,15 1-30 9,10 * node /scripts/jd_xinxiangyin.js >> /scripts/logs/jd_xinxiangyin.log 2>&1
 23 15 13-26 9 *  node /scripts/jd_film_museum.js >> /scripts/logs/jd_film_museum.log 2>&1
+10 0 * * * node /scripts/jd_ddworld.js >> /scripts/logs/jd_ddworld.log 2>&1
+12 19 19-30 9 * node /scripts/jd_star_shop.js >> /scripts/logs/jd_star_shop.log 2>&1
 
 #crazyJoy任务
 #10 9 * * * node /scripts/jd_crazy_joy.js >> /scripts/logs/jd_crazy_joy.log 2>&1
