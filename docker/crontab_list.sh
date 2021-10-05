@@ -14,7 +14,8 @@
 #预存validate
 59 7,15,23 * * * node /scripts/jd_validate_Worker.js >> /scripts/logs/jd_validate_Worker.log 2>&1
 #宠汪汪兑换京豆
-0 8,16,0 * * * node /scripts/jd_joy_reward.js >> /scripts/logs/jd_joy_reward.log 2>&1
+#0 8,16,0 * * * node /scripts/jd_joy_reward.js >> /scripts/logs/jd_joy_reward.log 2>&1
+59 7,15,23 * * * node /scripts/jd_joy_reward_Mod.js >> /scripts/logs/jd_joy_reward_Mod.log 2>&1
 #省钱大赢家之翻翻乐
 20 * * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
 ##############长期活动##############
@@ -126,6 +127,8 @@
 23 15 13-26 9 *  node /scripts/jd_film_museum.js >> /scripts/logs/jd_film_museum.log 2>&1
 10 0 * * * node /scripts/jd_ddworld.js >> /scripts/logs/jd_ddworld.log 2>&1
 12 19 19-30 9 * node /scripts/jd_star_shop.js >> /scripts/logs/jd_star_shop.log 2>&1
+0 0 * * * node /scripts/jd_dpqd.js >> /scripts/logs/jd_dpqd.log 2>&1
+20 0,16 * * * node /scripts/jd_ttpt.js >> /scripts/logs/jd_ttpt.log 2>&1
 
 #crazyJoy任务
 #10 9 * * * node /scripts/jd_crazy_joy.js >> /scripts/logs/jd_crazy_joy.log 2>&1
