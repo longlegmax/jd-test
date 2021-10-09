@@ -1,7 +1,7 @@
 /*
-cron "59 7,15,23 * * *" jd_joy_reward_Mod.js
+cron "58 7,15,23 * * *" jd_joy_reward_Mod.js
  */
-//Mod by ccwav
+//Mod by ccwav，20211008
 // prettier-ignore
 const $ = new Env('宠汪汪积分兑换有就换版');
 const zooFaker = require('./utils/JDJRValidator_Pure');
@@ -16,6 +16,9 @@ let Today = new Date();
 let strDisable20 = "false";
 if ($.isNode() && process.env.JOY_GET20WHEN16) {
 	strDisable20 = process.env.JOY_GET20WHEN16;
+	if (strDisable20 != "false") {
+		console.log("检测到16点时段才抢20京豆");
+	}
 }
 
 //IOS等用户直接用NobyDa的jd cookie
@@ -73,8 +76,8 @@ Date.prototype.Format = function (fmt) { //author: meizz
 			}
 			// console.log(`本地时间与京东服务器时间差(毫秒)：${await get_diff_time()}`);
 			$.validate = '';
-			$.validate = await zooFaker.injectToRequest()
-				console.log(`脚本开始请求时间 ${(new Date()).Format("yyyy-MM-dd hh:mm:ss | S")}`);
+			$.validate = await zooFaker.injectToRequest();
+			console.log(`脚本开始请求时间 ${(new Date()).Format("yyyy-MM-dd hh:mm:ss | S")}`);
 			await joyReward();
 		}
 	}
@@ -91,17 +94,28 @@ Date.prototype.Format = function (fmt) { //author: meizz
 
 async function joyReward() {
 	try {
-		if (new Date().getMinutes() === 59) {
-			let nowtime = new Date().Format("s.S")
-				let starttime = process.env.JOY_STARTTIME ? process.env.JOY_STARTTIME : 60;
+		let starttime = process.env.JOY_STARTTIME ? process.env.JOY_STARTTIME : 60;
+		let nowtime = new Date().getSeconds();
+		let sleeptime = 0;
+
+		if (new Date().getMinutes() == 58) {
+			sleeptime = (60 - nowtime) * 1000;
+			console.log(`请等待时间到达59分` + `等待时间 ${sleeptime / 1000}`);
+			await $.wait(sleeptime);
+		}
+
+		if (new Date().getMinutes() == 59) {
+			console.log(`脚本现在时间 ${(new Date()).Format("yyyy-MM-dd hh:mm:ss | S")}`);
+			nowtime = new Date().getSeconds();
 			if (nowtime < 59) {
-				let sleeptime = (starttime - nowtime) * 1000;
+				nowtime = new Date().getSeconds() + 1;
+				sleeptime = (starttime - nowtime) * 1000;
 				console.log(`等待时间 ${sleeptime / 1000}`);
-				await zooFaker.sleep(sleeptime)
+				await $.wait(sleeptime);
 			}
 		}
 		var llSuccess = false;
-		for (let j = 0; j <= 9; j++) {
+		for (let j = 0; j <= 14; j++) {
 			console.log(`\n正在尝试第` + (j + 1) + `次执行:${(new Date()).Format("yyyy-MM-dd hh:mm:ss | S")} \n`);
 
 			if (llSuccess) {
@@ -127,15 +141,29 @@ async function joyReward() {
 				let time = new Date($.getExchangeRewardsRes['currentTime']).getHours();
 				if (time >= 0 && time < 8) {
 					giftSaleInfos = 'beanConfigs0';
+					if (new Date().getMinutes() == 59) {
+						giftSaleInfos = 'beanConfigs8';
+					}
+
 				}
 				if (time >= 8 && time < 16) {
 					giftSaleInfos = 'beanConfigs8';
+					if (new Date().getMinutes() == 59) {
+						giftSaleInfos = 'beanConfigs16';
+					}
+
 				}
 				if (time >= 16 && time < 24) {
 					giftSaleInfos = 'beanConfigs16';
-					strDisable20 = "false";
+					if (new Date().getMinutes() == 59) {
+						giftSaleInfos = 'beanConfigs0';
+					}
 				}
 
+				if (giftSaleInfos == 'beanConfigs16' && strDisable20 != "false") {
+					console.log("现在是16点时段，执行抢20京豆");
+					strDisable20 = "false";
+				}
 				console.log(`debug场次:${giftSaleInfos}\n`)
 				for (let item of data[giftSaleInfos]) {
 					if (item.giftType === 'jd_bean') {
@@ -277,6 +305,7 @@ async function joyReward() {
 			} else {
 				console.log(`${$.name}getExchangeRewards异常,${JSON.stringify($.getExchangeRewardsRes)}`)
 			}
+			await $.wait(200);
 		}
 	} catch (e) {
 		$.logErr(e)
