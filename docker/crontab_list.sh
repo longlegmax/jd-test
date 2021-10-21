@@ -128,6 +128,8 @@
 12 19 19-30 9 * node /scripts/jd_star_shop.js >> /scripts/logs/jd_star_shop.log 2>&1
 0 0 * * * node /scripts/jd_dpqd.js >> /scripts/logs/jd_dpqd.log 2>&1
 20 0,16 * * * node /scripts/jd_ttpt.js >> /scripts/logs/jd_ttpt.log 2>&1
+#城城
+0 0-23/1 * * * node /scripts/jd_city.js >> /scripts/logs/jd_city.log 2>&1
 
 #crazyJoy任务
 #10 9 * * * node /scripts/jd_crazy_joy.js >> /scripts/logs/jd_crazy_joy.log 2>&1
