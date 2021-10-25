@@ -1,7 +1,7 @@
 /*
 * 活动：APP - 京东超市 - 限时抢京豆
 * 第一个CK助力作者，其他CK助力第一个CK
-cron 23 7,9 * * * https://raw.githubusercontent.com/star261/jd/main/scripts/jd_xsljd.js
+cron 23 7,9 * * * https://raw.githubusercontent.com/star261/jd/main/scripts/jd_xsqjd.js
 * */
 const $ = new Env('限时抢京豆');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
@@ -32,9 +32,9 @@ let autoCode = '',projectId = '',helpId = '';
         return;
     }
     let res = [];
-    try{res = await getAuthorShareCode('');}catch (e) {}
+    try{res = await getAuthorShareCode('https://raw.githubusercontent.com/longlegmax/jd-test/master/shop.json');}catch (e) {}
     if(!res){
-        try{res = await getAuthorShareCode('');}catch (e) {}
+        try{res = await getAuthorShareCode('https://raw.githubusercontent.com/longlegmax/jd-test/master/shop.json');}catch (e) {}
         if(!res){res = [];}
     }
     if(res.length > 0){
