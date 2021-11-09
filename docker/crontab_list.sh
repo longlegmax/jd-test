@@ -136,7 +136,8 @@
 40 12,16 * * * node /scripts/jd_fcwb.js >> /scripts/logs/jd_fcwb.log 2>&1
 #抢京豆
 0 0,12,20 * * * node /scripts/jd_qjd.js >> /scripts/logs/jd_qjd.log 2>&1
-
+#整点红包雨
+3 0-23/1 * * * node /scripts/jd_super_redrain.js >> /scripts/logs/jd_super_redrain.log 2>&1
 
 #crazyJoy任务
 #10 9 * * * node /scripts/jd_crazy_joy.js >> /scripts/logs/jd_crazy_joy.log 2>&1
