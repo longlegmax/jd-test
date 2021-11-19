@@ -10,7 +10,7 @@ const $ = new Env('发财挖宝');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [];
-let link = `yCcpwTLIbY6pjaM42ACUVg`;
+let link = `pTTvJeSTrpthgk9ASBVGsw`;
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
         cookiesArr.push(jdCookieNode[item])
@@ -160,7 +160,7 @@ async function takeRequest(functionId,bodyInfo,h5stFlag = false){
                 }
             } catch (e) {
                 console.log(data);
-                $.logErr(e, resp)
+                //$.logErr(e, resp)
             } finally {
                 resolve(data.data || {});
             }

@@ -83,7 +83,7 @@
 #京东种豆得豆
 1 7-21/2 * * * node /scripts/jd_plantBean.js >> /scripts/logs/jd_plantBean.log 2>&1
 #京东保价
-#41 0,23 * * * node /scripts/jd_price.js >> /scripts/logs/jd_price.log 2>&1
+41 0,23 * * * node /scripts/jd_price.js >> /scripts/logs/jd_price.log 2>&1
 #京东全民开红包
 1 1,2,23 * * * node /scripts/jd_redPacket.js >> /scripts/logs/jd_redPacket.log 2>&1
 #闪购盲盒
@@ -125,7 +125,6 @@
 12 9,15 1-30 9,10 * node /scripts/jd_xinxiangyin.js >> /scripts/logs/jd_xinxiangyin.log 2>&1
 23 15 13-26 9 *  node /scripts/jd_film_museum.js >> /scripts/logs/jd_film_museum.log 2>&1
 10 0 * * * node /scripts/jd_ddworld.js >> /scripts/logs/jd_ddworld.log 2>&1
-12 19 19-30 9 * node /scripts/jd_star_shop.js >> /scripts/logs/jd_star_shop.log 2>&1
 0 0 * * * node /scripts/jd_dpqd.js >> /scripts/logs/jd_dpqd.log 2>&1
 20 0,16 * * * node /scripts/jd_ttpt.js >> /scripts/logs/jd_ttpt.log 2>&1
 #超市抢豆
@@ -138,6 +137,14 @@
 0 0,12,20 * * * node /scripts/jd_qjd.js >> /scripts/logs/jd_qjd.log 2>&1
 #整点红包雨
 3 0-23/1 * * * node /scripts/jd_super_redrain.js >> /scripts/logs/jd_super_redrain.log 2>&1
+#内容鉴赏官
+15 3,6 * * *  node /scripts/jd_connoisseur.js >> /scripts/logs/jd_connoisseur.js 2>&1
+#跳跳乐瓜分京豆
+1 0,11,21 * * * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.js 2>&1
+#京喜工厂商品详情
+10 10 * * * node /scripts/jd_jxgckc.js >> /scripts/logs/jd_jxgckc.js 2>&1
+#牛牛福利
+1 0,19,23 * * * node /scripts/jd_nnfls.js >> /scripts/logs/jd_nnfls.js 2>&1
 
 #crazyJoy任务
 #10 9 * * * node /scripts/jd_crazy_joy.js >> /scripts/logs/jd_crazy_joy.log 2>&1
