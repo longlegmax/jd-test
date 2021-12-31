@@ -98,6 +98,7 @@
 8,9,10 1 * * * node /scripts/jd_speed_redpocke.js >> /scripts/logs/jd_speed_redpocke.log 2>&1
 #京东极速版
 0 7 * * * node /scripts/jd_speed_sign.js >> /scripts/logs/jd_speed_sign.log 2>&1
+0 6 * * * node /scripts/jd_speed_sign_Mod.js >> /scripts/logs/jd_speed_sign_Mod.log 2>&1
 #东东超市
 11 * * * * node /scripts/jd_superMarket.js >> /scripts/logs/jd_superMarket.log 2>&1
 #赚京豆
@@ -136,13 +137,16 @@
 #整点红包雨
 3 0-23/1 * * * node /scripts/jd_super_redrain.js >> /scripts/logs/jd_super_redrain.log 2>&1
 #内容鉴赏官
-15 3,6 * * *  node /scripts/jd_connoisseur.js >> /scripts/logs/jd_connoisseur.js 2>&1
+15 3,6 * * *  node /scripts/jd_connoisseur.js >> /scripts/logs/jd_connoisseur.log 2>&1
 #跳跳乐瓜分京豆
-1 0,11,21 * * * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.js 2>&1
+1 0,11,21 * * * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
 #京喜工厂商品详情
-10 10 * * * node /scripts/jd_jxgckc.js >> /scripts/logs/jd_jxgckc.js 2>&1
+10 10 * * * node /scripts/jd_jxgckc.js >> /scripts/logs/jd_jxgckc.log 2>&1
 #牛牛福利
-1 0,19,23 * * * node /scripts/jd_nnfls.js >> /scripts/logs/jd_nnfls.js 2>&1
+1 0,19,23 * * * node /scripts/jd_nnfls.js >> /scripts/logs/jd_nnfls.log 2>&1
+#农场集勋章
+16 7,16 * * * node /scripts/jd_medal_Mod.js >> /scripts/logs/jd_medal_Mod.log 2>&1
+
 
 #crazyJoy任务
 #10 9 * * * node /scripts/jd_crazy_joy.js >> /scripts/logs/jd_crazy_joy.log 2>&1
