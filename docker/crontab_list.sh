@@ -146,6 +146,13 @@
 1 0,19,23 * * * node /scripts/jd_nnfls.js >> /scripts/logs/jd_nnfls.log 2>&1
 #农场集勋章
 16 7,16 * * * node /scripts/jd_medal_Mod.js >> /scripts/logs/jd_medal_Mod.log 2>&1
+#京东年货签到
+23 7 * * * node /scripts/jd_nh_sign.js >> /scripts/logs/jd_nh_sign.log 2>&1
+#会场红包雨
+21 20,21 * * * node /scripts/jd_hc_rain.js >> /scripts/logs/jd_hc_rain.log 2>&1
+#京东通天塔--签到
+3 0 * * * node /scripts/jd_m_sign.js >> /scripts/logs/jd_m_sign.log 2>&1
+
 
 
 #crazyJoy任务
