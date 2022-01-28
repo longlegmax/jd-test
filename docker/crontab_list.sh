@@ -158,7 +158,8 @@
 0 0,9,18,22 * * * node /scripts/jd_city.js >> /scripts/logs/jd_city.log 2>&1
 #金榜
 13 7 * * * node /scripts/jd_gold_sign.js >> /scripts/logs/jd_gold_sign.log 2>&1
-
+#小魔方
+20 4,19 * * * node /scripts/jd_xmf.js >> /scripts/logs/jd_xmf.log 2>&1
 #crazyJoy任务
 #10 9 * * * node /scripts/jd_crazy_joy.js >> /scripts/logs/jd_crazy_joy.log 2>&1
 #监控crazyJoy分红
