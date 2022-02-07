@@ -4,10 +4,10 @@
 作者：gaoyucindy
 cron "50 * * * *" jd_cfd_hb.js
  */
-if (process.env.cfd_rp != 'true'){
-  console.log('设置cfd_rp为true运行')
-  return
-}
+//if (process.env.cfd_rp != 'true'){
+  //console.log('设置cfd_rp为true运行')
+  //return
+//}
 
 const $ = new Env('财富岛兑换红包');
 CryptoScripts()
