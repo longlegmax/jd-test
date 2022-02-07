@@ -9,6 +9,7 @@
 ##############短期活动##############
 #财富岛提现
 0 12,0 * * * node /scripts/jd_cfd_withdraw.js  >> /scripts/logs/jd_cfd_withdraw.log 2>&1
+50 * * * * node /scripts/jd_cfd_hb.js  >> /scripts/logs/jd_cfd_hb.log 2>&1
 #点点券
 20 0,20 * * * node /scripts/jd_necklace_new.js >> /scripts/logs/jd_necklace_new.log 2>&1
 #预存validate
