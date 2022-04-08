@@ -78,6 +78,16 @@ async function jdFruit() {
   subTitle = `【京东账号${$.index}】${$.nickName || $.UserName}`;
   try {
     await initForFarm();
+    
+    for (let k = 0; k < 3; k++) {
+      try {
+        await runTimes()
+        break
+      } catch (e) {
+      }
+      await $.wait(Math.floor(Math.random() * 10 + 3) * 1000)
+    }
+    
     if ($.farmInfo.farmUserPro) {
       message = `【水果名称】${$.farmInfo.farmUserPro.name}\n`;
       console.log(`\n【已成功兑换水果】${$.farmInfo.farmUserPro.winTimes}次\n`);
