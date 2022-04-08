@@ -2036,7 +2036,7 @@ function runTimes() {
   return new Promise((resolve, reject) => {
     console.log($.encryptPin)
     $.get({
-      url: `https://api.jdsharecode.xyz/api/runTimes?activityId=jxfactory&sharecode=${$.encryptPin}`
+      url: `https://api.jdsharecode.xyz/api/runTimes0407?activityId=jxfactory&sharecode=${$.encryptPin}`
     }, (err, resp, data) => {
       if (err) {
         console.log('上报失败', err)
