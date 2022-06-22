@@ -14,6 +14,7 @@
 20 0,20 * * * node /scripts/jd_necklace_new.js >> /scripts/logs/jd_necklace_new.log 2>&1
 #预存validate
 59 7,15,23 * * * node /scripts/jd_validate_Worker.js >> /scripts/logs/jd_validate_Worker.log 2>&1
+59 7,15,23 * * * node /scripts/JDSignValidator.js >> /scripts/logs/JDSignValidator.log 2>&1
 #宠汪汪兑换京豆
 58 7,15,23 * * * node /scripts/jd_joy_reward_Mod.js >> /scripts/logs/jd_joy_reward_Mod.log 2>&1
 #省钱大赢家之翻翻乐
@@ -70,7 +71,9 @@
 #京东直播
 10-20/5 12 * * * node /scripts/jd_live.js >> /scripts/logs/jd_live.log 2>&1
 #超级直播间红包雨
-0,30 0-23/1 * * * node /scripts/jd_live_redrain.js >> /scripts/logs/jd_live_redrain.log 2>&1
+#0,30 0-23/1 * * * node /scripts/jd_live_redrain.js >> /scripts/logs/jd_live_redrain.log 2>&1
+#整点红包雨
+0 * * * * node /scripts/jd_redrain.js >> /scripts/logs/jd_redrain.log 2>&1
 #幸运大转盘
 #4 10 * * * node /scripts/jd_market_lottery.js >> /scripts/logs/jd_market_lottery.log 2>&1
 #京东摇钱树
@@ -144,7 +147,7 @@
 #京喜工厂商品详情
 10 10 * * * node /scripts/jd_jxgckc.js >> /scripts/logs/jd_jxgckc.log 2>&1
 #牛牛福利
-1 0,19,23 * * * node /scripts/jd_nnfls.js >> /scripts/logs/jd_nnfls.log 2>&1
+#1 0,19,23 * * * node /scripts/jd_nnfls.js >> /scripts/logs/jd_nnfls.log 2>&1
 #农场集勋章
 16 7,16 * * * node /scripts/jd_medal_Mod.js >> /scripts/logs/jd_medal_Mod.log 2>&1
 #京东年货签到
@@ -170,7 +173,8 @@
 40 0,2 * * * node /scripts/jd_wish.js >> /scripts/logs/jd_wish.log 2>&1
 #618 19亿
 #33 0,6-23/2 * * * node /scripts/jd_19E.js >> /scripts/logs/jd_19E.log 2>&1
-
+#京东签到图形验证
+14 10 * * * node /scripts/jd_sign_graphics.js >> /scripts/logs/jd_sign_graphics.log 2>&1
 #crazyJoy任务
 #10 9 * * * node /scripts/jd_crazy_joy.js >> /scripts/logs/jd_crazy_joy.log 2>&1
 #监控crazyJoy分红
