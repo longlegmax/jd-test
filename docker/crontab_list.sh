@@ -14,7 +14,6 @@
 20 0,20 * * * node /scripts/jd_necklace_new.js >> /scripts/logs/jd_necklace_new.log 2>&1
 #预存validate
 59 7,15,23 * * * node /scripts/jd_validate_Worker.js >> /scripts/logs/jd_validate_Worker.log 2>&1
-59 7,15,23 * * * node /scripts/JDSignValidator.js >> /scripts/logs/JDSignValidator.log 2>&1
 #宠汪汪兑换京豆
 58 7,15,23 * * * node /scripts/jd_joy_reward_Mod.js >> /scripts/logs/jd_joy_reward_Mod.log 2>&1
 #省钱大赢家之翻翻乐
