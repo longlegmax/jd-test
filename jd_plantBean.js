@@ -133,7 +133,7 @@ async function jdPlantBean() {
 function runTimes() {
   return new Promise((resolve, reject) => {
     $.get({
-      url: `https://api.jdsharecode.xyz/api/runTimes0509?activityId=bean&sharecode=${$.myPlantUuid}`
+      url: `https://api.jdsharecode.xyz/api/runTimes0701?activityId=bean&sharecode=${$.myPlantUuid}`
     }, (err, resp, data) => {
       if (err) {
         console.log('上报失败', err)
@@ -410,7 +410,7 @@ async function doTask() {
 function showTaskProcess() {
   return new Promise(async resolve => {
     await plantBeanIndex();
-    $.taskList = $.plantBeanIndexResult.data.taskList;
+    $.taskList = $.plantBeanIndexResult.data?.taskList;
     if ($.taskList && $.taskList.length > 0) {
       console.log("     任务   进度");
       for (let item of $.taskList) {
