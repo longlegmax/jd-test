@@ -6,6 +6,9 @@
 #京东月资产变动通知
 10 7 1-31/7 * * node /scripts/jd_all_bean_changecdle.js >> /scripts/logs/jd_all_bean_changecdle.log 2>&1
 
+
+#清理node
+44 12,0 * * * killall node
 ##############短期活动##############
 #财富岛提现
 0 12,0 * * * node /scripts/jd_cfd_withdraw.js  >> /scripts/logs/jd_cfd_withdraw.log 2>&1
