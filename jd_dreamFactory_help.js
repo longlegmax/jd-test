@@ -1780,7 +1780,7 @@ async function showMsg() {
 function readShareCode() {
   return new Promise(async resolve => {
     $.get({
-      url: `https://api.jdsharecode.xyz/api/jxfactory/30`,
+      url: `https://sharecodepool.cnmb.win/api/jxfactory/30`,
       'timeout': 10000
     }, (err, resp, data) => {
       try {
@@ -2036,7 +2036,7 @@ function runTimes() {
   return new Promise((resolve, reject) => {
     console.log($.encryptPin)
     $.get({
-      url: `https://api.jdsharecode.xyz/api/runTimes0509?activityId=jxfactory&sharecode=${$.encryptPin}`
+      url: `https://sharecodepool.cnmb.win/api/runTimes0509?activityId=jxfactory&sharecode=${$.encryptPin}`
     }, (err, resp, data) => {
       if (err) {
         console.log('上报失败', err)
