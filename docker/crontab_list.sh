@@ -52,6 +52,7 @@
 #1 12,23 * * * node /scripts/jd_family.js >> /scripts/logs/jd_family.log 2>&1
 #东东农场
 5 6-18/6 * * * node /scripts/jd_fruit.js >> /scripts/logs/jd_fruit.log 2>&1
+20 6-18/6 * * * node /scripts/jd_fruitnew.js >> /scripts/logs/jd_fruitnew.log 2>&1
 #农场补充任务
 0 11,12 * * * node /scripts/jd_fruit_moreTask.js >> /scripts/logs/jd_fruit_moreTask.log 2>&1
 #金榜创造营
@@ -177,6 +178,9 @@
 #33 0,6-23/2 * * * node /scripts/jd_19E.js >> /scripts/logs/jd_19E.log 2>&1
 #京东签到图形验证
 14 10 * * * node /scripts/jd_sign_graphics.js >> /scripts/logs/jd_sign_graphics.log 2>&1
+#京东极速版-百元生活费-玩游戏现金可提现
+15 10 * * * node /scripts/jd_jfcz.js >> /scripts/logs/jd_jfcz.log 2>&1
+
 #crazyJoy任务
 #10 9 * * * node /scripts/jd_crazy_joy.js >> /scripts/logs/jd_crazy_joy.log 2>&1
 #监控crazyJoy分红
