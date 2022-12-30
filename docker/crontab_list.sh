@@ -181,7 +181,10 @@
 #京东极速版-百元生活费-玩游戏现金可提现
 15 10 * * * node /scripts/jd_jfcz.js >> /scripts/logs/jd_jfcz.log 2>&1
 
-#crazyJoy任务
+
+#年货节
+0 0,20 * * * node /scripts/jd_rednhj.js  >> /scripts/logs/jd_rednhj.log 2>&1
+
 #10 9 * * * node /scripts/jd_crazy_joy.js >> /scripts/logs/jd_crazy_joy.log 2>&1
 #监控crazyJoy分红
 #10 12 * * * node /scripts/jd_crazy_joy_bonus.js >> /scripts/logs/jd_crazy_joy_bonus.log 2>&1
