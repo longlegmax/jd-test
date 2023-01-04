@@ -82,6 +82,16 @@ async function jdPlantBean() {
       $.myPlantUuid = getParam(shareUrl, 'plantUuid')
       console.log(`\n【京东账号${$.index}（${$.UserName}）的${$.name}好友互助码】${$.myPlantUuid}\n`);
       jdPlantBeanShareArr.push($.myPlantUuid)
+      
+      for (let k = 0; k < 3; k++) {
+        try {
+          await runTimes()
+          break
+        } catch (e) {
+        }
+        await $.wait(Math.floor(Math.random() * 10 + 3) * 1000)
+      }
+
 
       roundList = $.plantBeanIndexResult.data.roundList;
       currentRoundId = roundList[num].roundId;//本期的roundId
@@ -92,6 +102,7 @@ async function jdPlantBean() {
       message += `【上期时间】${roundList[num - 1].dateDesc.replace('上期 ', '')}\n`;
       message += `【上期成长值】${roundList[num - 1].growth}\n`;
       await receiveNutrients();//定时领取营养液
+      await doHelp();
       await doTask();//做日常任务
       await stealFriendWater();
       await doCultureBean();
