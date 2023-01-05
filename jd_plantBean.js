@@ -422,10 +422,14 @@ async function doHelp() {
         } else if ($.helpResult.data.helpShareRes.state === '4') {
           console.log(`${$.helpResult.data.helpShareRes.promptText}\n`)
         } else {
-          console.log(`助力其他情况：${JSON.stringify($.helpResult.data.helpShareRes)}`);
+          console.log(`助力其他情况：${JSON.stringify($.helpResult.data.helpShareRes)}`)
         } else {
-          console.log(`助力好友失败: ${JSON.stringify($.helpResult)}`);
-}}}}}
+          console.log(`助力好友失败: ${JSON.stringify($.helpResult)}`)
+        }
+      }
+    }
+  }
+}
 function showMsg() {
   $.log(`\n${message}\n`);
   jdNotify = $.getdata('jdPlantBeanNotify') ? $.getdata('jdPlantBeanNotify') : jdNotify;
