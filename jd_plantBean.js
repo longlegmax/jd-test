@@ -102,6 +102,7 @@ async function jdPlantBean() {
       message += `【上期成长值】${roundList[num - 1].growth}\n`;
       await receiveNutrients();//定时领取营养液
       await doTask();//做日常任务
+      await doHelp();
       await stealFriendWater();
       await doCultureBean();
       await doGetReward();
@@ -397,7 +398,32 @@ function showTaskProcess() {
     resolve()
   })
 }
-
+//助力好友
+async function doHelp() {
+  for (let plantUuid of newShareCodes) {
+    console.log(`开始助力京东账号${$.index} - ${$.nickName}的好友: ${plantUuid}`);
+    if (!plantUuid) continue;
+    if (plantUuid === $.myPlantUuid) {
+      console.log(`\n跳过自己的plantUuid\n`)
+      continue
+    }
+    await helpShare(plantUuid);
+    if ($.helpResult && $.helpResult.code === '0') {
+      // console.log(`助力好友结果: ${JSON.stringify($.helpResult.data.helpShareRes)}`);
+      if ($.helpResult.data.helpShareRes) {
+        if ($.helpResult.data.helpShareRes.state === '1') {
+          console.log(`助力好友${plantUuid}成功`)
+          console.log(`${$.helpResult.data.helpShareRes.promptText}\n`);
+        } else if ($.helpResult.data.helpShareRes.state === '2') {
+          console.log('您今日助力的机会已耗尽，已不能再帮助好友助力了\n');
+          break;
+        } else if ($.helpResult.data.helpShareRes.state === '3') {
+          console.log('该好友今日已满9人助力/20瓶营养液,明天再来为Ta助力吧\n')
+        } else if ($.helpResult.data.helpShareRes.state === '4') {
+          console.log(`${$.helpResult.data.helpShareRes.promptText}\n`)
+        } else {
+          console.log(`助力其他情况：${JSON.stringify($.helpResult.data.helpShareRes)}`);
+          
 function showMsg() {
   $.log(`\n${message}\n`);
   jdNotify = $.getdata('jdPlantBeanNotify') ? $.getdata('jdPlantBeanNotify') : jdNotify;
@@ -633,7 +659,29 @@ async function plantShareSupportList() {
 async function plantBeanIndex() {
   $.plantBeanIndexResult = await request('plantBeanIndex');//plantBeanIndexBody
 }
-
+function readShareCode() {
+  return new Promise(async resolve => {
+    $.get({url: `https://sharecodepool.cnmb.win/api/bean/${randomCount}`, timeout: 10000}, (err, resp, data) => {
+      try {
+        if (err) {
+          console.log(`${JSON.stringify(err)}`)
+          console.log(`${$.name} API请求失败，请检查网路重试`)
+        } else {
+          if (data) {
+            console.log(`随机取个${randomCount}码放到您固定的互助码后面(不影响已有固定互助)`)
+            data = JSON.parse(data);
+          }
+        }
+      } catch (e) {
+        $.logErr(e, resp)
+      } finally {
+        resolve(data);
+      }
+    })
+    await $.wait(15000);
+    resolve()
+  })
+}
 //格式化助力码
 function requireConfig() {
   return new Promise(resolve => {
