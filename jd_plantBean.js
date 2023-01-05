@@ -423,7 +423,7 @@ async function doHelp() {
           console.log(`${$.helpResult.data.helpShareRes.promptText}\n`)
         } else {
           console.log(`助力其他情况：${JSON.stringify($.helpResult.data.helpShareRes)}`);
-          
+        }
 function showMsg() {
   $.log(`\n${message}\n`);
   jdNotify = $.getdata('jdPlantBeanNotify') ? $.getdata('jdPlantBeanNotify') : jdNotify;
