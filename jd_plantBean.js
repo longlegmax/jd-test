@@ -672,9 +672,9 @@ async function helpShare(plantUuid) {
   console.log(`\n开始助力好友: ${plantUuid}`);
   const body = {
     "plantUuid": plantUuid,
-    "wxHeadImgUrl": "",
-    "shareUuid": "",
-    "followType": "1",
+    //"wxHeadImgUrl": "",
+    //"shareUuid": "",
+    //"followType": "1",
   }
   $.helpResult = await request(`plantBeanIndex`, body);
   console.log(`助力结果的code:${$.helpResult && $.helpResult.code}`);
