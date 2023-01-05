@@ -423,8 +423,8 @@ async function doHelp() {
           console.log(`${$.helpResult.data.helpShareRes.promptText}\n`)
         } else {
           console.log(`助力其他情况：${JSON.stringify($.helpResult.data.helpShareRes)}`);
-		} else {
-		  console.log(`助力好友失败: ${JSON.stringify($.helpResult)}`);
+        } else {
+          console.log(`助力好友失败: ${JSON.stringify($.helpResult)}`);
 }}}}}
 function showMsg() {
   $.log(`\n${message}\n`);
