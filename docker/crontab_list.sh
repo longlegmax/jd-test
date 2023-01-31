@@ -180,10 +180,11 @@
 14 10 * * * node /scripts/jd_sign_graphics.js >> /scripts/logs/jd_sign_graphics.log 2>&1
 #京东极速版-百元生活费-玩游戏现金可提现
 15 10 * * * node /scripts/jd_jfcz.js >> /scripts/logs/jd_jfcz.log 2>&1
-
+#plus专属礼
+9 8 * * * node /scripts/jd_plus2bean.js >> /scripts/logs/jd_plus2bean.log 2>&1
 
 #年货节
-0 0,20 * * * node /scripts/jd_rednhj.js  >> /scripts/logs/jd_rednhj.log 2>&1
+#0 0,20 * * * node /scripts/jd_rednhj.js  >> /scripts/logs/jd_rednhj.log 2>&1
 
 #10 9 * * * node /scripts/jd_crazy_joy.js >> /scripts/logs/jd_crazy_joy.log 2>&1
 #监控crazyJoy分红
