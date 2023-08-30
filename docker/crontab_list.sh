@@ -51,10 +51,11 @@
 #京东家庭号
 #1 12,23 * * * node /scripts/jd_family.js >> /scripts/logs/jd_family.log 2>&1
 #东东农场
-5 6-18/6 * * * node /scripts/jd_fruit.js >> /scripts/logs/jd_fruit.log 2>&1
-20 6-18/6 * * * node /scripts/jd_fruitnew.js >> /scripts/logs/jd_fruitnew.log 2>&1
-#农场补充任务
-0 11,12 * * * node /scripts/jd_fruit_moreTask.js >> /scripts/logs/jd_fruit_moreTask.log 2>&1
+#5 6-18/6 * * * node /scripts/jd_fruit.js >> /scripts/logs/jd_fruit.log 2>&1
+10 2 * * * node /scripts/jd_fruit_friend.js >> /scripts/logs/jd_fruit_friend.log 2>&1
+20 4,16 * * * node /scripts/jd_fruit_help.js >> /scripts/logs/jd_fruit_help.log 2>&1
+5 6-18/6 * * * node /scripts/jd_fruit_task.js >> /scripts/logs/jd_fruit_task.log 2>&1
+11 11 11 11 * node /scripts/jd_fruit_watering.js >> /scripts/logs/jd_fruit_watering.log 2>&1
 #金榜创造营
 #13 1,22 * * * node /scripts/jd_gold_creator.js >> /scripts/logs/jd_gold_creator.log 2>&1
 #东东健康社区
