@@ -185,6 +185,8 @@
 21 9 * * * node /scripts/jd_gua_MMdou_Mod.js >> /scripts/logs/jd_gua_MMdou_Mod.log  2>&1
 #京洞察问卷通知
 35 9,15,20 * * * node /scripts/jd_insight_Mod.js    >> /scripts/logs/jd_insight_Mod.log  2>&1
+#每日抽金豆
+23 2 * * * node /scripts/jd_dygetbeans.js    >> /scripts/logs/jd_dygetbeans.log  2>&1
 
 #年货节
 #0 0,20 * * * node /scripts/jd_rednhj.js  >> /scripts/logs/jd_rednhj.log 2>&1
